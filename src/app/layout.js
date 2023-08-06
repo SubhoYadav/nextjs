@@ -1,7 +1,9 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
-
+import Link from "next/link";
 const inter = Inter({ subsets: ["latin"] });
+
+import Script from "next/script";
 
 export const metadata = {
   title: "Create Next App",
@@ -12,8 +14,43 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <h4>This is the global header</h4>
-
+        <Script src="https://kit.fontawesome.com/1c206fe670.js" />
+        <ul
+          style={{
+            display: "flex",
+          }}
+        >
+          <Link href={"/"}>
+            <li
+              style={{
+                padding: "8px",
+              }}
+            >
+              <i className="fa-solid fa-house"></i>
+              Home
+            </li>
+          </Link>
+          <Link href={"/users"}>
+            <li
+              style={{
+                padding: "8px",
+              }}
+            >
+              <i className="fa-solid fa-user-nurse"></i>
+              Users
+            </li>
+          </Link>
+          <Link href={"/serveractions"}>
+            <li
+              style={{
+                padding: "8px",
+              }}
+            >
+              <i class="fa-brands fa-aws"></i>
+              server actions
+            </li>
+          </Link>
+        </ul>
         {children}
         <h4>This is the global footer</h4>
       </body>

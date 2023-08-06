@@ -1,12 +1,17 @@
 "use client";
 import React from "react";
 import Button from "./Button";
+import Message from "./Message";
 export default function page(props) {
   return (
     <div>
-      {JSON.stringify(props, null, 2)}
+      <hr />
+      <Message>
+        <pre>{JSON.stringify(props, null, 2)}</pre>
+      </Message>
+      <Message>This is user List</Message>
       <br />
-      <Button className="bg-red-200"></Button>
+      <Button></Button>
     </div>
   );
 }

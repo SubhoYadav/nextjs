@@ -10,5 +10,16 @@ export default function Button() {
   console.log(
     "Components inside the app directory are by default server components !"
   );
-  return <button onClick={showAlert}>Click Me !</button>;
+  const styles = {
+    border: "2px solid red",
+  };
+  return (
+    <button
+      onClick={showAlert}
+      style={styles}
+      className="btn btn-danger btn-sm m-2"
+    >
+      Click Me !
+    </button>
+  );
 }
